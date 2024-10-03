@@ -26,6 +26,14 @@ public class Book {
             System.out.println("Book " + title + " is already lent.");
         }
     }
+    public void returnBook() {
+        if(!isAvailable) {
+            isAvailable = true;
+            System.out.println("Book " + title + " has been returned .");
+        } else {
+            System.out.println("Book " + title + " is already returned.");
+        }
+    }
 
 
     //----------------------- G & S ----------------------------------------
