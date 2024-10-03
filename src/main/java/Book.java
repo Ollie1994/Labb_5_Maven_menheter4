@@ -18,7 +18,14 @@ public class Book {
     public void displayBookDetails() {
         System.out.println("Title: " + title + "\nAuthor: " + author + "\nGenre: " + genre + "\nAvailable: " + (isAvailable ? "Yes" : "No"));
     }
-
+    public void lendBook() {
+        if(isAvailable) {
+            isAvailable = false;
+            System.out.println("Book " + title + " has been lent .");
+        } else {
+            System.out.println("Book " + title + " is already lent.");
+        }
+    }
 
 
     //----------------------- G & S ----------------------------------------
