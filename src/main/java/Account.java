@@ -5,7 +5,7 @@ public class Account {
     TryCatch tryCatch = new TryCatch();
     HashMap<String, User> users = new HashMap();
     HashMap<String, User> admin = new HashMap();
-    public void testLäggTill() {
+    public void testLäggTill() { // LÄGG TEST I MAIN
         admin.put("1", new User("Bibliotekarie", "Admin123" ));
         users.put("2", new User("Oliwer", "Lösen"));
         users.put("3", new User("Karolina", "Lösen768"));
@@ -13,7 +13,7 @@ public class Account {
     }
 
     //----------------METHODS for user---------------------------------------
-    public void createAccount() {
+    public void createAccount() { // (User user)
         System.out.println("please enter username");
         String username = tryCatch.tryCatchAccountCreation();
         System.out.println("please enter password");
