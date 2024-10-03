@@ -10,6 +10,10 @@ public class Book {
         this.genre = genre;
         this.isAvailable = true; // standard värde
     }
+
+    // ---------------BOOKS---------------------------------------
+    Book book1 = new Book("The Green Mile", "Steven King", "Thriller",true);
+
     //----------------METHODS------------------------------------
     public void displayBookDetails() {
         System.out.println("Title: " + title + "\nAuthor: " + author + "\nGenre: " + genre + "\nAvailable: " + (isAvailable ? "Yes" : "No"));
