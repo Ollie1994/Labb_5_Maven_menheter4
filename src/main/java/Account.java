@@ -1,15 +1,15 @@
-import java.util.ArrayList;
+import java.util.HashMap;
 
 public class Account {
 
     TryCatch tryCatch = new TryCatch();
-    ArrayList<User> users = new ArrayList<User>();
-    ArrayList<User> admin = new ArrayList<>();
+    HashMap<String, User> users = new HashMap();
+    HashMap<String, User> admin = new HashMap();
     public void testLäggTill() {
-        admin.add(new User("Bibliotekarie", "Admin123" ));
-        users.add(new User("Oliwer", "Lösen"));
-        users.add(new User("Karolina", "Lösen768"));
-        users.add(new User("Mergim", "LösenhejHå"));
+        admin.put("1", new User("Bibliotekarie", "Admin123" ));
+        users.put("2", new User("Oliwer", "Lösen"));
+        users.put("3", new User("Karolina", "Lösen768"));
+        users.put("4", new User("Mergim", "LösenhejHå"));
     }
 
     //----------------METHODS for user---------------------------------------
@@ -18,28 +18,33 @@ public class Account {
         String username = tryCatch.tryCatchAccountCreation();
         System.out.println("please enter password");
         String password = tryCatch.tryCatchAccountCreation();
-        users.add(new User(username, password));
+        users.put("5", new User(username, password));
         System.out.println("You have successfully created a new account with username " + username + " and password " + password);
     }
 
     public void loginCheck() {
-        while (true) {
+        int i = 0;
+        boolean p = true;
+        while (i < 3 && p == true)  {
+            i ++;
             System.out.println("please enter username");
             String usernameToTest = tryCatch.tryCatchAccountCreation();
             System.out.println("please enter password");
             String passwordToTest = tryCatch.tryCatchAccountCreation();
-            if (true) { // vi måste looopa igenom indexen efter namn och sen skriva nåt som jämför att det stämmer med inmatat.
-                System.out.println("You have successfully logged in");
-                break; // men ändra till att vi ska komam till meny här ifrån ifall vi lyckas logga in
-            } else {
-                System.out.println("You have unsuccessfully logged in");
+            for (User user : users.values()) {
+                if (usernameToTest.equals(user.getUserName()) && passwordToTest.equals(user.getPassword())) {
+                    System.out.println("You have successfully logged in!");
+                    p = false;
+
+
+                }
             }
         }
     }
 
     //--------------METHODS for Lib --------------------------
     public void displayAllUser() { // bara för admin
-        for (User user : users) {
+        for (User user : users.values()) {
             user.displayUserDetails();
         }
     }
