@@ -14,7 +14,7 @@ public class LendingAndReturn {
         books.put("7", new Book("Förinta Världen Ikväll", "Stina jackson", "Crime", true));
         books.put("8", new Book("Havsörnens Skrik", "Karin Smirnoff", "Animals", true));
         books.put("9", new Book("Andra Kvinnors Liv", "Jojo Moyes", "Drama", true));
-        books.put("10", new Book("Hundra Dagar I July", "Emelie Skepp", "Romance", true));
+
 
     }
 
@@ -24,9 +24,13 @@ public class LendingAndReturn {
     } */
 
     public void displayAllBooks() { // bara för admin
+        int i = 1;
+        int sum2 = 0;
+
         for (Book book : books.values()) {
-            System.out.println("MEtod");
-            book.displayBookDetails();
+            sum2 = sum2 + i;
+            System.out.println("Book." + sum2 + book);
+
         }
     }
 

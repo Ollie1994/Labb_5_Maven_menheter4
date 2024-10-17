@@ -12,12 +12,9 @@ public class Book {
     }
 
     // ---------------BOOKS---------------------------------------
-    Book book1 = new Book("The Green Mile", "Steven King", "Thriller",true);
 
     //----------------METHODS------------------------------------
-    public void displayBookDetails() {
-        System.out.println("Title: " + title + "\nAuthor: " + author + "\nGenre: " + genre + "\nAvailable: " + (isAvailable ? "Yes" : "No"));
-    }
+
     public void lendBook() {
         if(isAvailable) {
             isAvailable = false;
@@ -35,6 +32,10 @@ public class Book {
         }
     }
 
+    @Override
+    public String toString() {
+        return "\nTitle - " + title + "\nAuthor - " + author + "\nGenre - " + genre;
+    }
 
     //----------------------- G & S ----------------------------------------
     public String getTitle() {return title;}

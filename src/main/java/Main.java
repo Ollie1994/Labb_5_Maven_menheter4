@@ -4,10 +4,12 @@ public class Main {
         Account account1 = new Account();
         LendingAndReturn lendingAndReturn = new LendingAndReturn();
         //----------------------------------------
-        account1.testLäggTill();
 
-        System.out.println("hello");
+
+
+
         lendingAndReturn.addBooks();
+
         lendingAndReturn.displayAllBooks();
 
         //tester
@@ -15,7 +17,7 @@ public class Main {
         while (i < 10) {
             System.out.println("Welcome! \nWould you like to login or register a new account? \n1. Login \n2. Register an account \n3. Exit \n4. print users");
             int choice = tryCatch1.tryCatch1();
-            switch (choice) { // denna ska göras om, jsut nu bara för testning
+            switch (choice) { // denna ska göras om, just nu bara för testning
                 case 1:
                     account1.loginCheck();
                     i = 10;
@@ -24,7 +26,7 @@ public class Main {
                     account1.createAccount();
                     break;
                 case 3:
-                    System.exit(0); // vil kolalr vad detta är
+                    System.exit(0); // vill kolla vad detta är
 
                     return;
                 case 4:
